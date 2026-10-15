@@ -11,7 +11,7 @@ Question components are fully customisable. A question can render any UI it need
 
 ## Requirements
 
-- Node.js `>=20.9.0`
+- Node.js `>=24`
 - npm
 
 ## Quiz Structure
