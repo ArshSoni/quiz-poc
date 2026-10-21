@@ -449,32 +449,6 @@ function useQuiz(questions) {
     ] : []);
     const currentKey = history[index];
     const currentQuestion = currentKey ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$QuizBuilder$2f$helpers$2f$quiz$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["getQuestion"])(quiz, currentKey) : undefined;
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "useQuiz.useEffect": ()=>{
-            const timeout = window.setTimeout({
-                "useQuiz.useEffect.timeout": ()=>{
-                    try {
-                        const storedAnswers = JSON.parse(window.localStorage.getItem(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$QuizBuilder$2f$helpers$2f$quiz$2e$ts__$5b$client$5d$__$28$ecmascript$29$__["QUIZ_KEY"]) ?? 'null');
-                        if (!Array.isArray(storedAnswers)) return;
-                        const validAnswers = storedAnswers.filter({
-                            "useQuiz.useEffect.timeout.validAnswers": (answer)=>typeof answer === 'object' && answer !== null && 'key' in answer && typeof answer.key === 'string' && 'value' in answer
-                        }["useQuiz.useEffect.timeout.validAnswers"]);
-                        setAnswers(validAnswers);
-                        if (validAnswers.length > 0) {
-                            setHistory(validAnswers.map({
-                                "useQuiz.useEffect.timeout": (answer)=>answer.key
-                            }["useQuiz.useEffect.timeout"]));
-                        }
-                    } catch  {
-                    // Ignore malformed persisted quiz data and start with a fresh quiz.
-                    }
-                }
-            }["useQuiz.useEffect.timeout"], 0);
-            return ({
-                "useQuiz.useEffect": ()=>window.clearTimeout(timeout)
-            })["useQuiz.useEffect"];
-        }
-    }["useQuiz.useEffect"], []);
     const answerCurrent = (value)=>{
         if (!currentKey) return;
         if (currentQuestion?.required && value === null) return; // required questions can't be skipped
@@ -546,7 +520,7 @@ function useQuiz(questions) {
         progressPercentage: getPercentage()
     };
 }
-_s(useQuiz, "EfC0JK0XpsVfD0CZxssYFxHFoWY=");
+_s(useQuiz, "PkU7wSY8y07w+iLsfty5ydLKLRI=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

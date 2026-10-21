@@ -1,4 +1,7 @@
 self.__BUILD_MANIFEST = {
+  "/": [
+    "static/chunks/pages/index.js"
+  ],
   "/consultation": [
     "static/chunks/pages/consultation.js"
   ],

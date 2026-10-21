@@ -390,22 +390,6 @@ function useQuiz(questions) {
     ] : []);
     const currentKey = history[index];
     const currentQuestion = currentKey ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$QuizBuilder$2f$helpers$2f$quiz$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["getQuestion"])(quiz, currentKey) : undefined;
-    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
-        const timeout = window.setTimeout(()=>{
-            try {
-                const storedAnswers = JSON.parse(window.localStorage.getItem(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$QuizBuilder$2f$helpers$2f$quiz$2e$ts__$5b$ssr$5d$__$28$ecmascript$29$__["QUIZ_KEY"]) ?? 'null');
-                if (!Array.isArray(storedAnswers)) return;
-                const validAnswers = storedAnswers.filter((answer)=>typeof answer === 'object' && answer !== null && 'key' in answer && typeof answer.key === 'string' && 'value' in answer);
-                setAnswers(validAnswers);
-                if (validAnswers.length > 0) {
-                    setHistory(validAnswers.map((answer)=>answer.key));
-                }
-            } catch  {
-            // Ignore malformed persisted quiz data and start with a fresh quiz.
-            }
-        }, 0);
-        return ()=>window.clearTimeout(timeout);
-    }, []);
     const answerCurrent = (value)=>{
         if (!currentKey) return;
         if (currentQuestion?.required && value === null) return; // required questions can't be skipped

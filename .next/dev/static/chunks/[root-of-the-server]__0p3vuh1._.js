@@ -33,8 +33,6 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/head.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/link.js [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [client] (ecmascript)");
-;
 ;
 ;
 ;
@@ -43,53 +41,26 @@ function Home() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$head$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                    children: "MedExpress Genovia"
+                    children: "Quiz POC"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/index.tsx",
-                    lineNumber: 9,
+                    lineNumber: 8,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.tsx",
-                lineNumber: 8,
+                lineNumber: 7,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                src: "/logo.svg",
-                                alt: "MedExpress Genovia",
-                                width: 56,
-                                height: 56,
-                                className: "w-auto h-11"
-                            }, void 0, false, {
-                                fileName: "[project]/src/pages/index.tsx",
-                                lineNumber: 14,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-2xl font-semibold text-gray-900 italic",
-                                children: "Genovia"
-                            }, void 0, false, {
-                                fileName: "[project]/src/pages/index.tsx",
-                                lineNumber: 15,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/pages/index.tsx",
-                        lineNumber: 13,
-                        columnNumber: 9
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-gray-900",
                         children: "Please click the link below to take your consultation"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.tsx",
-                        lineNumber: 17,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -98,19 +69,19 @@ function Home() {
                         children: "Take consultation"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.tsx",
-                        lineNumber: 18,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.tsx",
-                lineNumber: 12,
+                lineNumber: 11,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/index.tsx",
-        lineNumber: 7,
+        lineNumber: 6,
         columnNumber: 5
     }, this);
 }

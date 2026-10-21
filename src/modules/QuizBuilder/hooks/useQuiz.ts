@@ -29,32 +29,6 @@ export function useQuiz(questions: Question[]) {
 	const currentKey = history[index];
 	const currentQuestion = currentKey ? getQuestion(quiz, currentKey) : undefined;
 
-	useEffect(() => {
-		const timeout = window.setTimeout(() => {
-			try {
-				const storedAnswers: unknown = JSON.parse(window.localStorage.getItem(QUIZ_KEY) ?? 'null');
-				if (!Array.isArray(storedAnswers)) return;
-
-				const validAnswers = storedAnswers.filter(
-					(answer): answer is Answer =>
-						typeof answer === 'object'
-						&& answer !== null
-						&& 'key' in answer
-						&& typeof answer.key === 'string'
-						&& 'value' in answer,
-				);
-				setAnswers(validAnswers);
-				if (validAnswers.length > 0) {
-					setHistory(validAnswers.map(answer => answer.key));
-				}
-			} catch {
-				// Ignore malformed persisted quiz data and start with a fresh quiz.
-			}
-		}, 0);
-
-		return () => window.clearTimeout(timeout);
-	}, []);
-
 	const answerCurrent = (value: AnswerValue) => {
 		if (!currentKey) return;
 		if (currentQuestion?.required && value === null) return; // required questions can't be skipped
