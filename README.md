@@ -1,4 +1,4 @@
-## Helios Quiz System
+## Quiz System
 
 Quiz System POC is a Next.js quiz application. This version is a smaller replica of the quiz system I helped lead and build at Manual.co.
 
