@@ -8,8 +8,8 @@ const ConsultationQuiz = () => {
 		questions: [
 			{
 				key: "pregnancy",
-				required: true,
-				next: "reaction",
+				required: false,
+				next: "diagnosed",
 				component: (props) => (
 					<YesNoQuestion
 						{...props}
@@ -20,7 +20,7 @@ const ConsultationQuiz = () => {
 			{
 				key: "diagnosed",
 				required: false,
-				next: 'medication',
+				next: 'reaction',
 				component: (props) => (
 					<YesNoQuestion
 						{...props}
@@ -31,7 +31,7 @@ const ConsultationQuiz = () => {
 			{
 				key: "reaction",
 				required: true,
-				next: "diagnosed",
+				next: "medication",
 				component: (props) => (
 					<YesNoQuestion
 						{...props}

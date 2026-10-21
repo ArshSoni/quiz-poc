@@ -15,13 +15,14 @@ export type Answers = Answer[];
 export interface QuestionComponentProps {
 	onAnswer: (value: AnswerValue) => void;
 	value?: AnswerValue;
+	required?: boolean;
 }
 
 export interface Question {
 	key: string;
 	next: string | null | ((answers: Answers) => string | null);
 	component: ComponentType<QuestionComponentProps>;
-	required?: boolean;
+	required: boolean;
 }
 
 export interface Quiz {
@@ -34,7 +35,7 @@ export function getQuestion(quiz: Quiz, key: string): Question | undefined {
 }
 
 export function getAnswer(answers: Answers, key: string): AnswerValue | undefined {
-	return answers.find(answer => answer.key === key)?.value;
+	return answers.find(answer => answer?.key === key)?.value;
 }
 
 export function getNextKey(quiz: Quiz, key: string, answers: Answers): string | null {

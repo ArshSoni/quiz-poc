@@ -3,7 +3,7 @@
  * consultation.tsx shows how this hook is used to create quizes really quickly via simple objects and chaining keeping actual code abstracted.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import {
 	getNextKey,
@@ -47,8 +47,7 @@ export function useQuiz(questions: Question[]) {
 		// 	answer,
 		// ];
 
-		const updatedAnswers = [...answers]
-		updatedAnswers[index] = answer;
+		const updatedAnswers = [...answers.slice(0, index), answer];
 
 		setAnswers(updatedAnswers);
 
@@ -84,12 +83,13 @@ export function useQuiz(questions: Question[]) {
 	}
 
 	const goForward = () => {
-		if ( isComplete ) return;
+		if (isComplete || currentQuestion?.required || !currentKey) return;
 
-		if ( index < history.length - 1) {
-			setIndex(index + 1);
-			return;
-		}
+		const nextKey = getNextKey(quiz, currentKey, answers);
+		if (nextKey === null) return;
+
+		setHistory([...history.slice(0, index + 1), nextKey]);
+		setIndex(index + 1);
 	}
 
 	const getPercentage = () => {
@@ -105,6 +105,9 @@ export function useQuiz(questions: Question[]) {
     return 0;
   }
 
+	const questionRequired = currentQuestion?.required === true;
+	const nextKeyExists = getNextKey(quiz, currentKey, answers) !== null;
+
 	return {
 		currentKey,
 		currentQuestion,
@@ -114,7 +117,8 @@ export function useQuiz(questions: Question[]) {
 		goBack,
 		goForward,
 		canGoBack: isComplete || index > 0,
-		canGoForward: !isComplete && index < history.length - 1,
+		canGoForward: !isComplete && !questionRequired &&
+			!!currentKey && nextKeyExists,
 		position: index + 1,
 		total: quiz.questions.length,
 		progressPercentage: getPercentage()

@@ -51,16 +51,17 @@ export const CreateQuiz = ({ title, questions }: Props) => {
 
           {QuestionComponent && !isComplete && (
             <div>
-              <h1 className="font-bold mb-4">{title} {currentQuestion.required === false ? '(optional)' : ''}</h1>
+              <h1 className="font-bold mb-4">{title}</h1>
 
               <p className="mb-4 text-sm text-gray-500">
-                Question {position} of {total}
+                Question {position} of {total} <i>{currentQuestion.required === false ? '(optional)' : ''}</i>
               </p>
 
 
               <QuestionComponent
                 onAnswer={answerCurrent}
                 value={currentKey ? getAnswer(answers, currentKey) : undefined}
+                required={currentQuestion.required}
               />
 
               <div className="mt-6 flex justify-between gap-6 text-sm">
@@ -74,7 +75,7 @@ export const CreateQuiz = ({ title, questions }: Props) => {
                   </button>
                 )}
 
-                {(canGoForward || !currentQuestion.required) && (
+                {(canGoForward) && (
                   <button
                     onClick={goForward}
                     className="`text-gray-500 hover:text-gray-700`">
